@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロトタイプ継承の簡単な例</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const parent = {
+      num: 1,
+      __proto__: {
+        method() {
+          return this.num;
+        },
+      },
+    };
+    const child = Object.create(parent);
+    child.num += 10;
+
+    console.log(parent.method()); // 1
+    console.log(child.method()); // 11
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>プロトタイプ継承の簡単な例</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

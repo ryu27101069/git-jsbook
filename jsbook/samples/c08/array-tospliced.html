@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toSpliced() の基本的な操作</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const arr = ['a', 'b', 'c', 'd', 'e'];
+
+    // 引数を1つ指定（削除開始インデックスから後ろをすべて削除）
+    const param1 = arr.toSpliced(1);
+    console.log(param1); // ['a']
+
+    // 引数を2つ指定（削除する要素の数を指定）
+    const param2 = arr.toSpliced(1, 2);
+    console.log(param2); // ['a', 'd', 'e']
+
+    // 引数を3つ指定（削除せず挿入）
+    const param3 = arr.toSpliced(1, 0, 'f');
+    console.log(param3); // ['a', 'f', 'b', 'c', 'd', 'e']
+
+    // 複数の要素を挿入
+    const param4 = arr.toSpliced(1, 0, 'f', 'g');
+    console.log(param4); // ['a', 'f', 'g', 'b', 'c', 'd', 'e']
+
+    // 挿入する要素を残余引数で指定
+    const items = [1, 2, 3];
+    const restParam = arr.toSpliced(2, 0, ...items);
+    console.log(restParam); // ["a", "b", 1, 2, 3, "c", "d", "e"]
+
+    // 削除して挿入する
+    const delAndAdd = arr.toSpliced(3, 2, 'x', 'y');
+    console.log(delAndAdd); // ['a', 'b', 'c', 'x', 'y']
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>JavaScript</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

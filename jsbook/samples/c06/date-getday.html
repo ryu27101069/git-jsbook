@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>曜日を取得してテキストにする</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function getDayString(day) {
+      if (day === 0) return '日曜日';
+      if (day === 1) return '月曜日';
+      if (day === 2) return '火曜日';
+      if (day === 3) return '水曜日';
+      if (day === 4) return '木曜日';
+      if (day === 5) return '金曜日';
+      if (day === 6) return '土曜日';
+      return '曜日の数字ではありません。';
+    }
+    
+    const date = new Date();
+    const dayStr = getDayString(date.getDay());
+    console.log(dayStr);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>曜日を取得してテキストにする</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

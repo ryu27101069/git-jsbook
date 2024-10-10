@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>padStart()を使って0埋めする</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const files = [];
+    for (let i = 1; i <= 10; i++) {
+      files.push(`img_${String(i).padStart(2, '0')}.jpg`);
+    }
+    console.log(files);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>padStart()を使って0埋めする</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>textContentプロパティの使い方とタグのエスケープ</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    // 通常のテキストを挿入
+    const plainText = 'textContentは要素にテキストを挿入する手軽なプロパティ';
+    document.querySelector('#parent1').textContent = plainText;
+
+    // タグが含まれるテキストを挿入
+    const htmlText = '<strong>textContentではタグがエスケープされ、単なるテキストとして挿入される</strong>';
+    document.querySelector('#parent2').textContent = htmlText;
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>textContentプロパティの使い方とタグのエスケープ</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p id="parent1"></p>
+      <p id="parent2"></p>
+    </div>
+  </main>
+</body>
+</html>
+
+

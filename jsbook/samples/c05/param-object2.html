@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>必要なプロパティだけ引数として受け取る</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const student = {
+      id: 231006,
+      grade: 1,
+      firstname: '田中',
+      lastname: '花子',
+    };
+
+    function showStudentInfo({id, grade}) {
+      const infoText = 'ID: ' + id + ' / 学年: ' + grade;
+      return infoText;
+    }
+
+    const infoElement = document.querySelector('#student-info');
+    infoElement.textContent = showStudentInfo(student);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>必要なプロパティだけ引数として受け取る</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p id="student-info"></p>
+    </div>
+  </main>
+</body>
+</html>
+
+

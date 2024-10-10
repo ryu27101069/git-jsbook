@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pop()の代わりにslice()を使って末尾の要素を削除</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const nums = [1, 2, 3, 4, 5];
+    const poped = nums.slice(0, -1);
+    console.log(poped); // [1, 2, 3, 4]
+    console.log(nums); // [1, 2, 3, 4, 5]
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>pop()の代わりにslice()を使って末尾の要素を削除</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

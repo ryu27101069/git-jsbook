@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数値かどうかを調べる</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const isNumber = (num) => typeof num === 'number';
+
+    console.log(isNumber(116)); // true | Number型の数値
+    console.log(isNumber(0xff)); // true | 16進数のNumber型
+    console.log(isNumber(3n)); // false | BigInt型
+    console.log(isNumber('116')); // false | String型（文字列）
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>数値かどうかを調べる</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

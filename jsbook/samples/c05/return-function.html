@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>関数を返す</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function returnFunc(msg) {
+      alert(msg);
+      return function() {
+        alert('returnFunc()が実行されないと使えない関数（newFunc()）を実行');
+      };
+    }
+
+    const newFunc = returnFunc('returnFunc()を実行');
+    newFunc();
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>関数を返す</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <ul>
+        <li>returnFunc()を呼び出すとアラートダイアログが出てきます。</li>
+        <li>returnFunc()の返り値である関数（newFuncに代入）を実行すると、別のアラートダイアログが出てきます。</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
+
+

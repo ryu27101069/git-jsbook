@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>有限数かどうかを調べる</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const isF = (num) => Number.isFinite(num);
+
+    console.log(isF(365)); // true | Number型の整数
+    console.log(isF(3.14)); // true | Number型の小数
+    console.log(isF(-8)); // true | Number型の負数
+    console.log(isF(Number.MAX_SAFE_INTEGER)); // true | 安全に扱える最大の整数=有限数の最大値
+    console.log(isF(Number.MAX_INTEGER)); // false | 表現可能な最大値は有限数と見なされない
+    console.log(isF(Infinity)); // false | Number型だが有限数でない
+    console.log(isF('116')); // false | String型（文字列）
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>有限数かどうかを調べる</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>find() メソッド、findIndex() メソッド</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const langs = ['Rust', 'Go', 'Ruby', 'JavaScript', 'Python'];
+    const evaluate = (a) => a.length >= 5;
+    // find()
+    const firstMatch = langs.find(evaluate);
+    // findIndex()
+    const firstIndex = langs.findIndex(evaluate);
+    console.log(`最初に見つかった言語：${firstMatch} インデックス ${firstIndex}`);
+    // コンソールの出力：最初に見つかった言語：JavaScript インデックス 3
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>find() メソッド、findIndex() メソッド</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

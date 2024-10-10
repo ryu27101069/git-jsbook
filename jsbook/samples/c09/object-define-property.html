@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロパティの操作権限を設定する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const memberInfo = {};
+    // id ── 書き換え不可、列挙不可、設定変更不可
+    Object.defineProperty(memberInfo, 'id', {
+      writable: false,
+      enumerable: false,
+      configurable: false,
+      value: 268309,
+    });
+
+    // email ── 書き換え可、列挙不可、設定変更不可
+    Object.defineProperty(memberInfo, 'email', {
+      writable: false,
+      enumerable: false,
+      configurable: false,
+      value: 'sukeharu@example.jp',
+    });
+
+    // point ── 書き換え可、列挙可、設定変更不可
+    Object.defineProperty(memberInfo, 'point', {
+      writable: true,
+      enumerable: true,
+      configurable: false,
+      value: 0,
+    });
+
+    console.log(memberInfo.id); // 268309
+    console.log(memberInfo.email); // sukeharu@example.jp
+    console.log(memberInfo.point); // 0
+
+    // 繰り返しをテスト
+    for (const [key, value] of Object.entries(memberInfo)) {
+      console.log(`${key}: ${value}`); // pointプロパティのみ表示される
+    }
+
+    // pointプロパティを書き換え
+    memberInfo.point += 250;
+    console.log(memberInfo.point); // 250
+
+    // 書き換え不可のプロパティを書き換える
+    memberInfo.id = 335124;
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>プロパティの操作権限を設定する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

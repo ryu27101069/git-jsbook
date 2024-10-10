@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロパティの値が関数の例</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const user = {
+      id: '11005',
+      name: 'Tanaka',
+      getName: function(id) {
+        if (id === this.id) {
+          return this.name;
+        }
+        return 'idが見つかりません。';
+      },
+    };
+
+    console.log(user.getName('11005')); // Tanaka
+    console.log(user.getName('12445')); // idが見つかりません。
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>プロパティの値が関数の例</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

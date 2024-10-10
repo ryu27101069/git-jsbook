@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toSpliced()をpop()、shift()の代わりに使う</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    // 元の配列
+    const arr = ['a', 'b', 'c', 'd', 'e'];
+
+    // pop()の代わり（末尾を削除）
+    const poped = arr.toSpliced(arr.length - 1);
+    console.log(poped); // ["a", "b", "c", "d"]
+
+    // shift()の代わり（先頭を削除）
+    const shifted = arr.toSpliced(0, 1);
+    console.log(shifted); // ["b", "c", "d", "e"]
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>toSpliced()をpop()、shift()の代わりに使う</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

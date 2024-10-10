@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライベートフィールド</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    class RamenOrder {
+      // fields
+      #base;
+      mori = 1;
+      toppings = [];
+      // constructor
+      constructor(base, mori) {
+        this.#base = base;
+        this.mori = this.setMori(mori);
+      }
+      // methods
+      setMori(mori) {
+        if (mori === 'ふつう') return 1;
+        if (mori === '大盛り') return 1.5;
+      }
+      addToppings(...args) {
+        this.toppings = [...this.toppings, ...args];
+      }
+      checkOrder() {
+        const orderStr = `味: ${this.#base}
+トッピング: ${this.toppings}
+盛り: ${this.mori}`;
+        console.log(orderStr);
+      }
+    }
+
+    const order1 = new RamenOrder('こってり', '大盛り');
+    order1.addToppings('ネギ', 'チャーシュー');
+    order1.checkOrder();
+    console.log(order1.#base); // SyntaxError
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>プライベートフィールド</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

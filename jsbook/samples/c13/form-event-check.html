@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チェックボックスにイベントを設定</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    document.querySelector('[name="check"]').addEventListener('change', (e) => {
+      const t = e.currentTarget;
+      const btn = document.querySelector('#ok');
+      if (t.checked) {
+        btn.disabled = false;
+      } else {
+        btn.disabled = true;
+      }
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>チェックボックスにイベントを設定</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p><label><input type="checkbox" name="check" id="check">利用規約を読みました。</label></p>
+      <p><button id="ok" disabled>利用規約を承認する</button></p>
+    </div>
+  </main>
+</body>
+</html>
+
+

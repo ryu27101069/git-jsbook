@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「関数のテンプレート」となる関数を作る</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function fontSizeChanger(selector, rate) {
+      return function() {
+        const element = document.querySelector(selector);
+        // 現在のフォントサイズを取得、代入
+        const currentSize = Number(
+            getComputedStyle(element)['font-size'].match(/[\d.]+/)[0]);
+        // 引数rateに基づいて新しいフォントサイズをセット、ただし9px以上
+        const size = Math.max(currentSize * rate, 9);
+        document.querySelector(selector).style['font-size'] = `${size}px`;
+      };
+    }
+
+    const setSmaller = fontSizeChanger('#content', 0.9);
+    const setLarger = fontSizeChanger('#content', 1.1);
+
+    document.querySelector('#small').addEventListener('click', setSmaller);
+    document.querySelector('#big').addEventListener('click', setLarger);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>「関数のテンプレート」となる関数を作る</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div>
+        <button id="small">-</button>
+        <button id="big">+</button>
+      </div>
+      <article id="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus felis tellus, quis fringilla diam porta in. Quisque a ullamcorper tellus, et imperdiet ligula. Proin tristique sit amet sapien sit amet dignissim. Sed vehicula, quam in mollis euismod, libero arcu iaculis sapien, a imperdiet magna nibh vitae augue. Nulla egestas ex eu dictum euismod. Nullam pretium ex at rutrum consequat. Curabitur ornare cursus dui ac consectetur. Sed eros ligula, consequat a ultricies id, tincidunt sit amet erat. Proin malesuada suscipit ipsum eu tristique.</p>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
+
+

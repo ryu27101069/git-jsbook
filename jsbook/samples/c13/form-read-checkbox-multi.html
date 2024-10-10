@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チェックがついているチェックボックスを取得</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const getCheckMultiValue = (selector) => {
+      const arr = [];
+      const checkboxes = document.querySelectorAll(selector + ':checked');
+      checkboxes.forEach((v, i) => {
+        arr.push([v.value, v]);
+      });
+      return arr;
+    };
+
+    document.querySelector('#btn').addEventListener('click', (e) => {
+      const checked = getCheckMultiValue('[name="checkbox-multi"]');
+      console.log(checked);
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>チェックがついているチェックボックスを取得</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <dl>
+        <dt>好きな味を選んでください</dt>
+        <dd>
+          <label><input type="checkbox" name="checkbox-multi" value="marmalade">マーマレード</label><br>
+          <label><input type="checkbox" name="checkbox-multi" value="peach">ピーチ</label><br>
+          <label><input type="checkbox" name="checkbox-multi" value="strawberry">ストロベリー</label><br>
+          <label><input type="checkbox" name="checkbox-multi" value="applecinamon">アップル&シナモン</label><br>
+        </dd>
+      </dl>
+      <p><button id="btn">値を取得</button></p>
+    </div>
+  </main>
+</body>
+</html>
+
+

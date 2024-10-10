@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クラスの継承</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    class RamenOrder {
+      // fields
+      static #menus = ['こってり', 'さっぱり'];
+      #base;
+      mori = 1;
+      toppings = [];
+      // constructor
+      constructor(base, mori) {
+        this.#base = base;
+        this.mori = this.setMori(mori);
+      }
+      // methods
+      static isInMenu(menu) {
+        return this.#menus.includes(menu);
+      }
+      setMori(mori) {
+        if (mori === 'ふつう' || mori === undefined) return 1;
+        if (mori === '大盛り') return 1.5;
+      }
+      addToppings(...args) {
+        this.toppings = [...this.toppings, ...args];
+      }
+      checkOrder() {
+        const orderStr = `味: ${this.#base}
+トッピング: ${this.toppings}
+盛り: ${this.mori}`;
+        console.log(orderStr);
+      }
+      // getter / setter
+      get base() {
+        return this.#base;
+      }
+      set base(taste) {
+        this.#base = taste;
+      }
+    }
+
+    class TsukemenOrder extends RamenOrder {
+      // fields
+      static #menus = ['つけめん'];
+      atsumori = false;
+      // constructor
+      constructor(base, mori, atsumori) {
+        super(base, mori);
+        this.atsumori = atsumori ?? this.atsumori;
+      }
+      // methods
+      checkOrder() {
+        const orderStr = `味: ${this.base}
+トッピング: ${this.toppings}
+盛り: ${this.mori}
+あつもり: ${this.atsumori}`;
+        console.log(orderStr);
+      }
+    }
+
+    const order1 = new RamenOrder('こってり');
+    order1.addToppings('チャーシュー', '味玉');
+    order1.checkOrder();
+
+    const order2 = new TsukemenOrder('つけめん', '大盛り', true);
+    order2.checkOrder();
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>クラスの継承</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

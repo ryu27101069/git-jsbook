@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>複数の要素を同時に移動する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 0.3fr 1fr;
+      gap: 1rem;
+    }
+    .container ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .task-box {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 8px;
+    }
+
+    .move-box {
+      display: grid;
+      place-content: center center;
+      border: none;
+    }
+  </style>
+  <script type="module">
+    document.querySelector('#move').addEventListener('click', () => {
+      // #todo から #done へ
+      const toDone = document.querySelectorAll('#todo li:has(input:checked)');
+      toDone.forEach((v, i) => {
+        v.firstElementChild.checked = false;
+      });
+      document.querySelector('#done').append(...toDone);
+
+      // #done から #todo へ
+      const toTodo = document.querySelectorAll('#done li:has(input:checked)');
+      toTodo.forEach((v, i) => {
+        v.firstElementChild.checked = false;
+      });
+      document.querySelector('#todo').append(...toTodo);
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>複数の要素を同時に移動する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="task-box">
+        <p>やること</p>
+        <ul id="todo">
+          <li><input type="checkbox"> 試算アプリのバグを修正</li>
+          <li><input type="checkbox"> プロジェクトの進捗状況をメッセージ</li>
+          <li><input type="checkbox"> nodejsでよく使うコマンドをまとめる</li>
+          <li><input type="checkbox"> 宣伝ページのデザインを依頼</li>
+        </ul>
+      </div>
+      <div class="move-box">
+        <button id="move">← 移動 →</button>
+      </div>
+      <div class="task-box">
+        <p>終わったこと</p>
+        <ul id="done"></ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+

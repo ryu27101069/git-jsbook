@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>子要素を丸ごと書き換える replaceChildren()</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    // 文字列からElementオブジェクトを作る関数
+    function makeElementsFromString(elm) {
+      const dummy = document.createElement('div');
+      dummy.innerHTML = elm;
+      return dummy.children;
+    }
+
+    document.querySelector('#update').addEventListener('click', () => {
+      const latestNews = `<p>今日のニュースまとめ</p>
+      <ul>
+        <li>キャロットシステムズ、高精度にフィッシングメールを識別するプログラムを開発</li>
+        <li>迷子をなくせ！　手軽でプライバシーも万全の見守りシステム</li>
+      </ul>`;
+
+      const elm = document.querySelector('#latest');
+      elm.replaceChildren(...makeElementsFromString(latestNews));
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>子要素を丸ごと書き換える replaceChildren()</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div id="latest">
+        <p>ニュースフラッシュ</p>
+        <p>マイアイティインターナショナル、果物の収穫時期を判定するAI搭載ドローンを発表</p>
+      </div>
+      <div><button id="update">更新</button></div>
+    </div>
+  </main>
+</body>
+</html>
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>next()を呼び出すたびに値が更新される</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function rangeIterator(start, end, step = 1) {
+      let nextValue = start;
+
+      const iterator = {
+        next() {
+          let result;
+          if (nextValue < end) {
+            result = {value: nextValue, done: false};
+            nextValue += step;
+            return result;
+          }
+          return {value: undefined, done: true};
+        },
+      };
+      return iterator;
+    }
+
+    const it = rangeIterator(0, 10, 2);
+    console.log(it.next()); // {value: 0, done: false}
+    console.log(it.next().value); // 2 | 返ってくるオブジェクトのvalueプロパティのみ取得
+    console.log(it.next().value); // 4
+    console.log(it.next().value); // 6
+    console.log(it.next().value); // 8
+    console.log(it.next().value); // undefined
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>next()を呼び出すたびに値が更新される</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

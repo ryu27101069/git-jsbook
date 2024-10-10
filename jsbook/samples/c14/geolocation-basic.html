@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geolocationの通常の使い方</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const output = document.querySelector('#output');
+    // 成功時のコールバック
+    function success(pos) {
+      output.insertAdjacentHTML(
+          'beforeend',
+          `<p>北緯：${pos.coords.latitude}°</p>`);
+      output.insertAdjacentHTML(
+          'beforeend',
+          `<p>東経：${pos.coords.longitude}°</p>`);
+    }
+    // 失敗時のコールバック
+    function fail(err) {
+      output.insertAdjacentHTML(
+          'beforeend',
+          `<p>位置情報が取得できません。${err.message} code: ${err.code}</p>`);
+    }
+    navigator.geolocation.getCurrentPosition(success, fail);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>Geolocation 通常の使い方</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div id="output"></div>
+    </div>
+  </main>
+</body>
+</html>
+
+

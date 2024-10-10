@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>引数の数を確かめる方法その2</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const makeText = (a, b, ...rest) => {
+      if (a === undefined || b === undefined || rest.length > 0) {
+        throw new Error('引数の数が不正です。正しくは2です。');
+      }
+      return a + 'は' + b + 'です。';
+    };
+
+    console.log(makeText('昼の休憩', '12時から')); // 昼の休憩は12時からです。
+    console.log(makeText('閉館')); // Error
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>引数の数を確かめる方法その2</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

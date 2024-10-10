@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>要素を文字列で作るとプログラムが組み込めてしまう</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const dangerous = `<p onclick="alert('文字列でプログラムが組み込めてしまう')">クリックしちゃダメ！</p>`;
+    document.querySelector('#parent').insertAdjacentHTML('afterbegin', dangerous);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>要素を文字列で作るとプログラムが組み込めてしまう</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div id="parent"></div>
+    </div>
+  </main>
+</body>
+</html>
+
+

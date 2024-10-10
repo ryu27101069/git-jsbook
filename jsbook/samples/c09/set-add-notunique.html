@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>重複した値を追加しようとしてもエラーなどは発生しない</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const set = new Set()
+        .add(1)
+        .add(2)
+        .add(3);
+    console.log(set); // Set(3) {1, 2, 3}
+
+    set.add(1);
+    console.log(set); // Set(3) {1, 2, 3}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>Setオブジェクトに値を追加する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

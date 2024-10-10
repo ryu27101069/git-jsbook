@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>data-*属性の使用例</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    .gallery {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      max-width: 615px;
+    }
+  </style>
+  <script type="module">
+    function changeImage(src, alt) {
+      const largeImage = document.querySelector('.large > img');
+      largeImage.src = src;
+      largeImage.alt = alt;
+    }
+
+    document.querySelectorAll('.thumb').forEach((v, i) => {
+      v.addEventListener('click', (e) => {
+        const image = e.currentTarget.children[0];
+        const src = image.dataset.large;
+        const alt = image.dataset.alt;
+        changeImage(src, alt);
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>data-*属性の使用例</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div id="gallery" class="gallery">
+        <div class="thumbs">
+          <div class="thumb">
+            <img src="../res/thumb1.jpg"
+                 alt=""
+                 data-large="../res/d-brown.jpg"
+                 data-alt="キャラメルチョコレートナッツ"
+            >
+          </div>
+          <div class="thumb">
+            <img src="../res/thumb2.jpg"
+                 alt=""
+                 data-large="../res/d-white.jpg"
+                 data-alt="シャイニーホワイト"
+            >
+          </div>
+          <div class="thumb">
+            <img src="../res/thumb3.jpg"
+                 alt=""
+                 data-large="../res/d-red.jpg"
+                 data-alt="プリティーストロベリー"
+            >
+          </div>
+          <div class="thumb">
+            <img src="../res/thumb4.jpg"
+                 alt=""
+                 data-large="../res/d-black.jpg"
+                 data-alt="クッキークリームモンスター"
+            >
+          </div>
+        </div>
+        <div class="large"><img src="../res/d-brown.jpg" alt=""></div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+

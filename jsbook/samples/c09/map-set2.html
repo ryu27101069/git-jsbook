@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map.set()をメソッドチェーンで書いた場合</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const map = new Map()
+        .set('file', 'images/catsle.jpg')
+        .set('wh', [1200, 800])
+        .set('alt', '小田原城天守閣');
+
+    console.log(map); // Map {"file" => "images/catsle.jpg", "wh" => [1200, 800], "alt" => "小田原城天守閣"}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>Map.set()をメソッドチェーンで書いた場合</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

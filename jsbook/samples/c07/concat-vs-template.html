@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字列結合─文字列と数値</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const minTemp = 9;
+    const maxTemp = 21;
+
+    // 文字列結合
+    const concat = '最低気温：' + minTemp + '℃ / 最高気温：' + maxTemp + '℃';
+    console.log('文字列連結 ' + concat);
+
+    // テンプレートリテラル
+    const template = `最低気温：${minTemp}℃ / 最高気温：${maxTemp}℃`;
+    console.log('テンプレートリテラル ' + template);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>文字列結合─文字列と数値</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

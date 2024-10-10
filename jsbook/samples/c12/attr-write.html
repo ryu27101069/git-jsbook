@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>src属性を書き換える</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    #image-box {
+      width: 400px;
+    }
+    .ui {
+      margin-bottom: 1rem;
+    }
+  </style>
+  <script type="module">
+    const changePhoto = (path) => {
+      document.querySelector('#photo').src = path;
+    };
+
+    document.querySelector('#btn1').addEventListener('click', () => {
+      changePhoto('../res/square-1.jpg');
+    });
+    document.querySelector('#btn2').addEventListener('click', () => {
+      changePhoto('../res/square-2.jpg');
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>src属性を書き換える</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="ui">
+        <button id="btn1">シュークリーム</button> 
+        <button id="btn2">クロワッサン</button>
+      </div>
+      <div id="image-box">
+        <img src="../res/square-1.jpg" alt="" id="photo">
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+

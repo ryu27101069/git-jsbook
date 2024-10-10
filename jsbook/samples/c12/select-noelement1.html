@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>要素が取得できなかった場合の対処①</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const paragraph = document.querySelector('#text');
+    if (!paragraph) {
+      document.querySelector('#container').insertAdjacentHTML(
+          'beforeend',
+          '<p>段落テキストを追加</p>');
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>要素が取得できなかった場合の対処①</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div id="container" class="container">
+
+    </div>
+  </main>
+</body>
+</html>
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>引数が配列のときの注意点</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function move(arr, qty) {
+      const newArr = arr;
+      for(let i = 0; i < arr.length; i++) {
+        newArr[i] += qty; 
+      }
+      return newArr;
+    }
+
+    const position = [336, 112];
+    const newPosition = move(position, 10);
+    console.log(newPosition); // [346, 122] 
+    console.log(position); // [346, 122] positionまで書き換わってしまう
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>引数が配列のときの注意点</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

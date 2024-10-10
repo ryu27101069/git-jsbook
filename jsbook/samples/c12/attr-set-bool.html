@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ブール属性を追加する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    document.querySelector('#agree').addEventListener('click', (e) => {
+      const t = e.currentTarget;
+      t.setAttribute('disabled', '');
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>ブール属性を追加する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p><button id="agree">利用規約を読んで承諾しました。</button></p>
+    </div>
+  </main>
+</body>
+</html>
+
+

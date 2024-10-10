@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>詳細情報に含まれる個々の情報を1つずつコンソールに出力</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const str = '2017年03月10日 Webデザイン上級講座、Webサーバーサイド講座を開講します。';
+
+    const results = str.matchAll(/Web(?<title>.+?講座)/gd);
+    for (const result of results) {
+      console.log(result[0]); // マッチした文字列
+      console.log(result[1]); // キャプチャーグループ1
+      console.log(result.groups); // 名前つきキャプチャーグループ
+      console.log(result.index); // マッチした位置のインデックス
+      console.log(result.input); // 検索対象の文字列
+      console.log(result.indices[0]); // マッチした文字列の開始・終了インデックス
+      console.log(result.indices[1]); // キャプチャーグループ1の開始・終了インデックス
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>詳細情報に含まれる個々の情報を1つずつコンソールに出力</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英単語を数字に置き換える（キーを値で置換する）</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const replaceWords = (str) => {
+      const wordNumbers = {
+        'one': '1',
+        'two': '2',
+        'three': '3',
+        'four': '4',
+      };
+      const entries = Object.entries(wordNumbers);
+      for (const [key, value] of entries) {
+        str = str.split(key).join(value);
+      }
+      return str;
+    };
+
+    const str = 'two is greater than one.';
+    console.log(replaceWords(str)); // 2 is greater than 1.
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>英単語を数字に置き換える（キーを値で置換する）</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

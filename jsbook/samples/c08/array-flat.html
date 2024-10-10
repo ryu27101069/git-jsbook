@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flat()メソッド</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    // 基本的な使い方
+    const d2 = [[1, 2], [3, 4]];
+    const d2Flat = d2.flat();
+    console.log(d2Flat); // [1, 2, 3, 4]
+
+    // 深さを指定して展開
+    const d3 = [1, 2, [3, [4, 5]]];
+    console.log(d3.flat()); // [1, 2, 3, [4, 5]]
+    console.log(d3.flat(2)); // [1, 2, 3, 4, 5]
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>flat()メソッド</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

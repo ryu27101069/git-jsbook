@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>繰り返しの途中で中断する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const arr = [3, 5, 18, 35];
+
+    let result = 0;
+    for (let i = 0; i < arr.length; i++) {
+      result += arr[i];
+
+      if (result >= 20) {
+        console.log((i + 1) + '回足すと20以上になります。' + result);
+        break;
+      }
+      console.log((i + 1) + '回足すと ' + result);
+    }
+
+    console.log('終了');
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>繰り返しの途中で中断する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2次元配列の値を取り出す／書き換える</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const arr = [[1, 2], [3, 4], [5, 6]];
+    // arrのインデックス1番目の0番目の値を取り出す
+    console.log(arr[1][0]); // 3
+    // at()メソッドを連続しても取り出せる
+    console.log(arr.at(1).at(0)); // 3
+    // arrのインデックス2番目の1番目の値を書き換える
+    arr[2][1] = 'six';
+    console.log(arr); // [[1, 2], [3, 4], [5, 'six']]
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>2次元配列の値を取り出す／書き換える</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

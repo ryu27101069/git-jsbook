@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>関数を返す関数の基本的な例</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function init() {
+      const proverbs = [
+        '犬も歩けば棒に当たる',
+        'かわいい子には旅をさせよ',
+        '馬の耳に念仏',
+      ];
+
+      return function() {
+        const rand = Math.floor(Math.random() * proverbs.length);
+        return proverbs[rand];
+      };
+    };
+
+    const saying = init();
+    console.log(saying());
+    console.log(saying());
+    console.log(saying());
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>関数を返す関数の基本的な例</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

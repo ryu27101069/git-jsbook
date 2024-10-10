@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&amp;&amp;演算子の動作を正確に理解する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    console.log(false && true); // false ── 1.2のケース
+    console.log(true && false); // false ── 2のケース
+    console.log(true && true); // true ── 2のケース
+
+    // trueやfalseと「見なされる」値を使った場合
+    console.log('' && 'bの文字列'); // ''（aの値） ── 1.2のケース。空の文字列はfalseと見なされる
+    console.log('aの文字列' && ''); // ''（aの値） ── 2のケース
+    console.log('aの文字列' && 'bの文字列'); // 'bの文字列' ── 2のケース
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>&amp;&amp;演算子の動作を正確に理解する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

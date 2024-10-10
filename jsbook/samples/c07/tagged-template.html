@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タグ付きテンプレートの基本動作</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function myTag(strings, age) {
+      console.log(strings);
+      console.log(age);
+      age = new Date().getFullYear() - 1995;
+      let comment = '';
+      if (age < 30 ) comment = 'もうすぐ30歳です。';
+      if (age === 30 ) comment = 'やったー！';
+      if (age > 30 ) comment = 'これからもよろしくお願いします。';
+      return strings[0] + age + strings[1] + comment;
+    }
+
+    const introduce = myTag`わたしはJavaScriptです。1995年に誕生しました。今年で${0}歳、`;
+    console.log(introduce);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>タグ付きテンプレートの基本動作</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

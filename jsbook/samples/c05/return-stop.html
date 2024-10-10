@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>条件によって返す値を変える</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function evaluate(a) {
+      if (a < 0) {
+        return 'a は負の数です。';
+      }
+      if (a >= 0) {
+        return 'a は 0 以上です。';
+      }
+      return 'aは数字ではありません。';
+    }
+
+    console.log(evaluate(41)); // a は 0 以上です。
+    console.log(evaluate(-81)); // a は負の数です。
+    console.log(evaluate(6n)); // a は 0 以上です。BigIntも数字
+    console.log(evaluate('文字列はどう？')); // aは数字ではありません。
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>条件によって返す値を変える</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

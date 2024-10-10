@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スタティックフィールド、スタティックメソッド</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    class RamenOrder {
+      // fields
+      static #menus = ['こってり', 'さっぱり'];
+      #base;
+      mori = 1;
+      toppings = [];
+      // constructor
+      constructor(base, mori) {
+        this.#base = base;
+        this.mori = this.setMori(mori);
+      }
+      // methods
+      static isInMenu(menu) {
+        return this.#menus.includes(menu);
+      }
+      setMori(mori) {
+        if (mori === 'ふつう' || mori === undefined) return 1;
+        if (mori === '大盛り') return 1.5;
+      }
+      addToppings(...args) {
+        this.toppings = [...this.toppings, ...args];
+      }
+      checkOrder() {
+        const orderStr = `味: ${this.#base}
+トッピング: ${this.toppings}
+盛り: ${this.mori}`;
+        console.log(orderStr);
+      }
+      // getter / setter
+      get base() {
+        return this.#base;
+      }
+      set base(taste) {
+        this.#base = taste;
+      }
+    }
+
+    // インスタンス化する前に引数をチェックし、
+    // 注文できる内容かどうかを確認する
+    const orderMenu = 'さっぱり';
+    let order1;
+    if (RamenOrder.isInMenu(orderMenu)) {
+      order1 = new RamenOrder(orderMenu);
+      order1.addToppings('ネギ', 'チャーシュー');
+      order1.checkOrder();
+    } else {
+      console.log(`${orderMenu} はメニューにありません。`);
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>スタティックフィールド、スタティックメソッド</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>有限の整数かどうかを調べる</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const isSafeInt = (num) => Number.isSafeInteger(num);
+
+    console.log(isSafeInt(365));// true
+    console.log(isSafeInt(3.14)); // false | Number型の小数
+    console.log(isSafeInt(-8));// true
+    console.log(isSafeInt(Number.MAX_SAFE_INTEGER));// true
+    console.log(isSafeInt(Number.MAX_INTEGER)); // false
+    console.log(isSafeInt(Infinity)); // false
+    console.log(isSafeInt('116')); // false
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>有限の整数かどうかを調べる</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

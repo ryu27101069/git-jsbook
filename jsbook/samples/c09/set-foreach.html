@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SetオブジェクトのforEach()メソッド</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const set = new Set(['銀座線', '丸ノ内線', '日比谷線', '東西線']);
+    set.forEach((v, i) => {
+      console.log(v === i); // 引数の1つ目と2つ目の値は同じだから常にtrue
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>SetオブジェクトのforEach()メソッド</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

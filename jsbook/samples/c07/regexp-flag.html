@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フラグの使い方</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const str = 'JavaScript and Python';
+
+    // フラグなし /a/
+    const aNF = str.match(/a/);
+    console.log(aNF); // ['a']
+
+    // gフラグあり /a/g
+    const aG = str.match(/a/g);
+    console.log(aG); // ['a', 'a', 'a']
+
+    // gフラグあり・iフラグなし /p/g
+    const pG = str.match(/p/g);
+    console.log(pG); // ['p']
+
+    // gフラグあり・iフラグあり /p/gi
+    const pGI = str.match(/p/gi);
+    console.log(pGI); // ['p', 'P']
+
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>JavaScript</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

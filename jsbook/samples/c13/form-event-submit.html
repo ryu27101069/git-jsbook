@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>submitイベントを設定</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    *, ::before, ::after { box-sizing: border-box; }
+    html { font-size: 16px; font-family: sans-serif; }
+    .note {
+      margin: 1rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #eee;
+    }
+    .main {
+      margin: 0.5rem auto;
+      padding: 0 1rem;
+      max-width: 1000px;
+    }
+
+    #login {
+      margin: 0 auto;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      max-width: 360px;
+    }
+    [type="text"], [type="password"] {
+      width: 100%;
+      font-size: 1rem;
+    }
+  </style>
+  <script type="module">
+    document.forms['login'].addEventListener('submit', () => {
+      const userName = document.querySelector('[name="username"]').value;
+      alert(`${userName} としてログインします。`);
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>submitイベントを設定</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <form action="#" id="login">
+        <p>
+          メールアドレスまたはユーザー名<br>
+          <input type="text" name="username" id="username" required>
+        </p>
+        <p>
+          パスワード<br>
+          <input type="password" name="password" id="password" required>
+        </p>
+        <p>
+          <input type="submit" value="ログイン">
+        </p>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
+
+

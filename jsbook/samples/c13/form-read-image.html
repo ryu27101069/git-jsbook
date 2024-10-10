@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画像ファイルを表示</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    dl {
+      margin: 0;
+      padding: 0;
+    }
+    dt {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      width: 180px;
+      vertical-align: top;
+    }
+    dd {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+
+    #content {
+      display: grid;
+      place-content: center center;
+      margin: 1rem;
+      border: 1px solid #ccc;
+      padding: 8px;
+      min-height: 100px;
+      font-size: 0.8rem;
+      color: #333;
+    }
+
+    #content > img {
+      max-width: 100%;
+    }
+  </style>
+  <script type="module">
+    document.querySelector('#image-upload').addEventListener('change', (e) => {
+      const file = e.currentTarget.files[0];
+      const reader = new FileReader();
+      reader.addEventListener('load', () => {
+        const img = document.querySelector('#content > img');
+        img.src = reader.result;
+      });
+      reader.readAsDataURL(file);
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>画像ファイルを表示</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <dl>
+        <dt>単一の画像ファイル</dt>
+        <dd><input type="file" id="image-upload" accept=".jpg, .png"></dd>
+      </dl>
+      <div id="content"><img></div>
+    </div>
+  </main>
+</body>
+</html>
+
+

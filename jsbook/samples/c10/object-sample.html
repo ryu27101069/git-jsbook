@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1つの注文を表すオブジェクト</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const ramenOrder = {
+      base: 'さっぱり',
+      mori: 1,
+      toppings: ['味玉', 'チャーシュー'],
+      // 盛りを設定
+      setMori(mori) {
+        if (mori === 'ふつう') this.mori = 1;
+        if (mori === '大盛り') this.mori = 1.5;
+      },
+      // オーダーを確認
+      checkOrder() {
+        console.log(`味: ${this.base}
+トッピング: ${this.toppings}
+盛り: ${this.mori}
+        `);
+      },
+    };
+
+    ramenOrder.setMori('大盛り');
+    ramenOrder.checkOrder();
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>1つの注文を表すオブジェクト</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      
+    </div>
+  </main>
+</body>
+</html>
+
+

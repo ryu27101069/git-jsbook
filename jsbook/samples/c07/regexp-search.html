@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>search()で検索し、返り値で出力を振り分ける</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const str = '2017年03月10日 Webデザイン上級講座、Webサーバーサイド講座を開講します。';
+
+    const testResult = str.search(/\d{4}年\d{2}月\d{2}日/);
+    if (testResult <= 0) {
+      console.log(`文字列がマッチしました。インデックス ${testResult} で見つかります。`);
+    } else {
+      console.log('文字列はマッチしませんでした。');
+    }
+    // コンソールの出力：文字列がマッチしました。インデックス 0 で見つかります。
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>search()で検索し、返り値で出力を振り分ける</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

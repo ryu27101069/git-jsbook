@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>オブジェクトのプロパティ値で並べ替える</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const mountains = [
+      {name: '富士山', altitude: 3776},
+      {name: '雲取山', altitude: 2017},
+      {name: '陣馬山', altitude: 855},
+    ];
+    mountains.sort((a, b) => {
+      return a.altitude - b.altitude;
+    });
+    console.log(mountains);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>オブジェクトのプロパティで並べ替える</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

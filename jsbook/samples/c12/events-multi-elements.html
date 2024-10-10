@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>複数の要素に同じイベントリスナーを設定する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    .help {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+    #helptip {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-radius: 4px;
+      padding: 8px;
+      background: #fff;
+      box-shadow: 0 0 8px #666;
+      font-size: 12px;
+    }
+    #helptip.show {
+      display: inline;
+      max-width: 200px;
+    }
+  </style>
+  <script type="module">
+    // 複数の<span class="help">にイベントを設定
+    document.querySelectorAll('.help').forEach((v, i) => {
+      v.addEventListener('mouseenter', (e) => {
+        const t = e.currentTarget;
+        const bounds = t.getBoundingClientRect();
+        showHelptip(bounds, t.dataset.help);
+      });
+      v.addEventListener('mouseleave', (e) => {
+        document.querySelector('#helptip').classList.remove('show');
+      });
+    });
+
+    // ヘルプチップを表示する
+    const showHelptip = (bounds, text) => {
+      const help = document.querySelector('#helptip');
+
+      help.textContent = text;
+      help.classList.add('show');
+
+      // 座標を計算
+      const myBounds = help.getBoundingClientRect();
+      const pos = {
+        x: bounds.x,
+        y: bounds.y - myBounds.height - 8,
+      };
+      const transVal = `translate(${pos.x}px, ${pos.y}px)`;
+      help.style['transform'] = transVal;
+    };
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>複数の要素に同じイベントリスナーを設定する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p><span class="help" data-help="HTMLドキュメントから要素を取得するメソッドの一種">document.querySelectorAll()</span> で複数の要素を取得しすべてに同じ<span class="help" data-help="発生するであろうイベントに待機すること">イベントリスナー</span>を設定するときは、forEach()メソッドを使うのが便利です。</p>
+    </div>
+  </main>
+  <div id="helptip">text</div>
+</body>
+</html>
+
+

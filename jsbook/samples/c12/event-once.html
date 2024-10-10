@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>イベントリスナーのオプションを設定する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    #number {
+      font-size: 24px;
+    }
+  </style>
+  <script type="module">
+    // 数字を足す
+    const addLike = () => {
+      const numElm = document.querySelector('#number');
+      const currentLike = Number(numElm.textContent);
+      numElm.textContent = currentLike + 1;
+    };
+    // アイコンをクリックしたときに呼び出されるコールバック関数clickLikeを定義
+    const clickLike = (e) => {
+      e.currentTarget.children[0].src = '../res/like-off.png';
+      addLike();
+    };
+    // イベントリスナーを設定
+    document.querySelector('#like').addEventListener('click',
+        clickLike,
+        {once: true});
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>イベントリスナーのオプションを設定する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div id="fav">
+        <span id="like"><img src="../res/like-on.png" alt="" width="40"></span>
+        <span id="number">0</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+

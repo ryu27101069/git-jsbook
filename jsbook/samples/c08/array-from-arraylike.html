@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コールバック関数を工夫して配列を作成</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    // 0から9まで連続した整数の配列を作成
+    const numbers = Array.from({length: 10}, (v, i) => i);
+    console.log(numbers); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    // 乱数の配列を作成
+    const randNum = Array.from({length: 5}, (v, i) => {
+      return Math.floor(Math.random() * 10) + 1;
+    });
+    console.log(randNum); // [7, 7, 10, 3, 3]（例）
+
+    // 桁埋め数字の配列を作成
+    const padNum = Array.from({length: 10}, (v, i) => {
+      return String(i + 1).padStart(2, 0);
+    });
+    console.log(padNum); // ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>コールバック関数を工夫して配列を作成</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

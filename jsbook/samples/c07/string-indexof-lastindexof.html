@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>indexOf()とlastIndexOf()でインデックス番号を調べる</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const str = '高尾山に電車で行く場合は高尾山口駅で降ります。';
+    // indexOf()
+    console.log(str.indexOf('高尾山')); // 0 | 最初に見つかった位置を返す
+    console.log(str.indexOf('富士山')); // -1 | 見つからなかったら-1を返す
+    // lastIndexOf()
+    console.log(str.lastIndexOf('高尾山')); // 12 | 最後に見つかった位置を返す
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>indexOf()とlastIndexOf()でインデックス番号を調べる</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

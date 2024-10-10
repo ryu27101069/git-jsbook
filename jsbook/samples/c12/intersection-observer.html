@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intersection Observer</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    main {
+      position: relative;
+      margin: 0;
+    }
+    .top-image {
+      margin-bottom: 1rem;
+      width: 100%;
+      min-height: 90vh;
+      background: url(../res/ruins.jpg) no-repeat;
+      background-position: center top;
+      background-size: 100%;
+    }
+    .heading {
+      margin: 0 auto;
+      max-width: 1000px;
+      font-size: 60px;
+      line-height: 1em;
+    }
+    .container {
+      width: 800px;
+    }
+    .img-left {
+      margin: 2rem 0;
+      padding: 16px;
+      width: 550px;
+      background: #eee;
+      text-align: right;
+    }
+    .img-left > img {
+      width: 256px;
+    }
+    .img-center {
+      margin: 0 auto;
+      padding: 16px;
+      width: 800px;
+      text-align: center;
+    }
+    .img-center > img {
+      width: 256px;
+    }
+    .footer {
+      padding: 16px 0;
+      background: #008ef1;
+      color: white;
+    }
+    .footer p {
+      margin-bottom: 0;
+      text-align: center;
+    }
+    #gotop {
+      margin: 0 auto;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+
+    /* animation */
+    .header1 {
+      transition: all 0.8s ease-out;
+      transform: translate(-800px, 0);
+      opacity: 0;
+    }
+    .header1.anim {
+      transform: translate(0);
+      opacity: 1;
+    }
+    .container1 {
+      transition: all 0.8s ease-out;
+      transform: translate(200px, 0);
+      opacity: 0;
+    }
+    .container1.anim {
+      transform: translate(0);
+      opacity: 1;
+    }
+    .img-left {
+      transition: all 0.8s ease-out;
+      transform: translate(-400px, 0);
+      opacity: 0;
+    }
+    .img-left.anim {
+      transform: translate(0);
+      opacity: 1;
+    }
+    .header2 {
+      transition: all 0.8s ease-out;
+      transform: translate(0, -100px);
+      opacity: 0;
+    }
+    .header2.anim {
+      transform: translate(0);
+      opacity: 1;
+    }
+    .container2 {
+      transition: all 0.8s ease-out;
+      opacity: 0;
+    }
+    .container2.anim {
+      opacity: 1;
+    }
+    .img-center {
+      transition: all 0.8s ease-out;
+      transform: scale(2);
+      filter: blur(32px);
+      opacity: 0;
+    }
+    .img-center.anim {
+      transform: scale(1);
+      filter: blur(0);
+      opacity: 1;
+    }
+    .container3 {
+      transition: all 0.5s ease-out;
+      transform: translate(0, 80px);
+      opacity: 0;
+    }
+    .container3.anim {
+      transform: translate(0);
+      opacity: 1;
+    }
+  </style>
+  <script type="module">
+    const options = {
+      root: null,
+      rootMargin: '0px 50px',
+      threshold: [0.2, 0, 0.2, 0],
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((v, i) => {
+        if (v.isIntersecting) {
+          v.target.classList.add('anim');
+        } else {
+          v.target.classList.remove('anim');
+        }
+      });
+    }, options);
+
+    observer.observe(document.querySelector('#header1'));
+    observer.observe(document.querySelector('#container1'));
+    observer.observe(document.querySelector('#img-left'));
+    observer.observe(document.querySelector('#header2'));
+    observer.observe(document.querySelector('#container2'));
+    observer.observe(document.querySelector('#img-center'));
+    observer.observe(document.querySelector('#container3'));
+
+    // scroll
+    document.querySelector('#gotop').addEventListener('click', (e) => {
+      scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>Intersection Observer</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="top-image"></div>
+    <h1 class="heading header1" id="header1">
+      Lorem ipsum<br>
+      dolor sit amet
+    </h1>
+    <div class="container container1" id="container1">
+      <p>consectetur adipiscing elit. Suspendisse sit amet iaculis enim. Aliquam commodo tempus lacus lobortis ullamcorper. Suspendisse gravida sodales lacus, sit amet congue sem faucibus vitae. Nulla vel bibendum enim. Sed ultrices euismod ipsum et volutpat. Quisque fringilla eros quis turpis porttitor, id dapibus ligula ornare. Phasellus tortor elit, mollis vel placerat vitae, tincidunt vitae ipsum.</p>
+    </div>
+    <div class="img-left" id="img-left">
+      <img src="../res/io1.jpg" alt="">
+    </div>
+    <h2 class="heading header2" id="header2">In quis porttitor diam</h2>
+    <div class="container container2" id="container2">
+      <p>Duis molestie lacus vitae eros elementum, ac vestibulum nisl efficitur. Proin ut est vel ante semper tempor id at augue. Morbi quam neque, posuere id efficitur tempus, accumsan sed ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet non massa a condimentum. Fusce nec ligula at nulla finibus tempor a id justo. Nulla facilisi. Integer dignissim, dui ut consectetur consectetur, nisi elit pellentesque neque, eu luctus risus dolor a augue. Praesent lacus dui, pulvinar maximus purus vel, rutrum pharetra turpis. Duis eu urna vitae purus egestas tincidunt.</p>
+    </div>
+    <div class="img-center" id="img-center">
+      <img src="../res/io2.jpg" alt="">
+    </div>
+    <div class="container container3" id="container3">
+      <p>Suspendisse magna enim, pharetra at suscipit nec, bibendum nec urna. Vestibulum ultricies fringilla nisl, in aliquam leo viverra in. Nam auctor ligula nec mi maximus, vitae eleifend eros vehicula. Etiam ac lacinia eros. Nam eleifend vehicula diam, sed varius mi cursus vitae. Etiam ut massa consequat, pellentesque metus at, blandit dolor. Quisque in dapibus risus, id iaculis est.</p>
+    </div>
+  </main>
+  <footer class="footer">
+    <div id="gotop"><img src="../res/arrow-up.svg" alt=""></div>
+    <p>JavaScript Design Center</p>
+  </footer>
+</body>
+</html>
+
+

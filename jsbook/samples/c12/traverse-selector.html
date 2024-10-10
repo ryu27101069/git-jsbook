@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>取得した要素の子要素をCSSセレクターで選択する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const targetParent = document.querySelector('#target-parent');
+    const marks = targetParent.querySelectorAll('mark');
+    for (const mark of marks) {
+      console.log(mark);
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>取得した＜要素＞の子要素をCSSセレクターで選択する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p id="target-parent"><mark>querySelector()</mark>、<mark>querySelectorAll()</mark>メソッドは取得した＜要素＞に対して使うこともできます。＜要素＞に対して使うと、<mark>要素の子要素だけを、CSSセレクターで選択することができます</mark>。</p>
+      <p>この段落の&lt;mark&gt;は<mark>選択されません</mark>。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

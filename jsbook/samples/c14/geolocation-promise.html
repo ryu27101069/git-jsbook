@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>geolocationPromise()を使ったサンプル</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    // Promise版Geolocation
+    function geolocationPromise() {
+      return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(
+            (pos) => resolve(pos),
+            (err) => reject(err));
+      });
+    }
+
+    const output = document.querySelector('#output');
+    try {
+      const pos = await geolocationPromise();
+      output.insertAdjacentHTML(
+          'beforeend',
+          `<p>北緯：${pos.coords.latitude}°</p>`);
+      output.insertAdjacentHTML(
+          'beforeend',
+          `<p>東経：${pos.coords.longitude}°</p>`);
+    } catch (err) {
+      output.insertAdjacentHTML(
+          'beforeend',
+          `<p>位置情報が取得できません。${err.message} code: ${err.code}</p>`);
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>geolocationPromise()を使ったサンプル</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div id="output"></div>
+    </div>
+  </main>
+</body>
+</html>
+
+

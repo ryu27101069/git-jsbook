@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>try〜catch〜finallyの利用例</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function gamble() {
+      try {
+        if (Math.random() > 0.5) {
+          alert('エラーは発生せずダイアログが開けました。');
+          console.log('エラーなし');
+        } else {
+          alerl('エラー発生！');
+        }
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setTimeout(() => {
+          gamble();
+        }, 5000);
+      }
+    }
+
+    gamble();
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>try〜catch〜finallyの利用例</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

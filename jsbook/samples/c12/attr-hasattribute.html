@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>属性があるかどうかを確認する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    #sweets {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+  </style>
+  <script type="module">
+    const divs = document.querySelectorAll('div');
+    const ids = [];
+    for (const div of divs) {
+      if (div.hasAttribute('id')) {
+        ids.push(div.getAttribute('id'));
+      }
+    }
+    console.log(ids); // ['sweets']
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>属性があるかどうかを確認する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div id="sweets">
+        <div class="photo"><img src="../res/square-1.jpg" alt=""></div>
+        <div class="photo"><img src="../res/square-2.jpg" alt=""></div>
+        <div class="photo"><img src="../res/square-3.jpg" alt=""></div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+

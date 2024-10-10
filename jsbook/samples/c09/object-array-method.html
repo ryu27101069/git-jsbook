@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メソッドを作成するときの2つの書式</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const weather = {
+      place: {
+        city: 'Tokyo',
+        lat: 35.7,
+        lng: 139.7,
+      },
+      date: '2023-05-08',
+      temp: [16, 14, 14, 22, 25, 26, 21, 20],
+      max: function() {
+        return Math.max(...this.temp);
+      },
+      min() {
+        return Math.min(...this.temp);
+      },
+    };
+    console.log(weather.max()); // 26
+    console.log(weather.min()); // 14
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>メソッドを作成するときの2つの書式</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

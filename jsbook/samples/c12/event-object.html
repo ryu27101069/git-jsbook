@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventオブジェクトの例</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+     #box {
+      display: grid;
+      place-content: center center;
+      border: 5px solid #f5e3e3;
+      width: 300px;
+      height: 100px;
+      background: #ebc7c8;
+      color: #561a1b;
+      cursor: pointer;
+    }
+  </style>
+  <script type="module">
+    const box = document.querySelector('#box');
+    box.addEventListener('click', (e) => {
+      console.log(`${e.type} イベント発生`);
+      console.log(e.currentTarget);
+      console.log(e.target);
+      console.log(`client position: (${e.clientX}, ${e.clientY})`);
+      console.log(`offset position: (${e.offsetX}, ${e.offsetY})`);
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>Eventオブジェクトの例</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div id="box"><strong>Event Object</strong></div>
+    </div>
+  </main>
+</body>
+</html>
+
+

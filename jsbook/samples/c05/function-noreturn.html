@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>値を返さない関数</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function changeColor() {
+      const element = document.querySelector('#change');
+      element.style['color'] = '#ff0000';
+    }
+
+    changeColor();
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>値を返さない関数</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p id="change">テキストの色が変わります。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>検索クエリーを使ってGETで送信</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    #placeholder {
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      max-width: 1000px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+  <script type="module">
+    // 検索クエリーに含めるデータ
+    const comments = {
+      postId: 3,
+    };
+
+    // URLを作成
+    const query = new URLSearchParams(comments);
+    const url = new URL('https://jsonplaceholder.typicode.com/comments');
+    url.search = query;
+
+    const response = await fetch(url);
+    const data = await response.json();
+    const placeholder = document.querySelector('#placeholder');
+    placeholder.textContent = JSON.stringify(data, null, 2);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>検索クエリーを使ってGETで送信</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>https://jsonplaceholder.typicode.comから返ってきたデータ</p>
+      <pre id="placeholder"></pre>
+    </div>
+  </main>
+</body>
+</html>
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アップロードされたファイルの情報を取得</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    dl {
+      margin: 0;
+      padding: 0;
+    }
+    dt {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      width: 180px;
+      vertical-align: top;
+    }
+    dd {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script type="module">
+    document.querySelector('#textfile').addEventListener('change', (e) => {
+      const file = e.currentTarget.files[0]; // 単一ファイルであっても配列で返ってくる
+      const fileName = file.name;
+      const fileSize = Math.round(file.size / 1024);
+      document.querySelector('#file').textContent = `${fileName} (${fileSize}KB)`;
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>アップロードされたファイルの情報を取得</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <dl>
+        <dt>単一のテキストファイル</dt>
+        <dd><input type="file" id="textfile" accept=".txt" name="file"></dd>
+      </dl>
+      <p><output id="file"></output></p>
+    </div>
+  </main>
+</body>
+</html>
+
+

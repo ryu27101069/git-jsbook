@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>exec() の使用例</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const str = '位置情報はOFF、通知はON';
+
+    // gフラグなし
+    console.log('gフラグなし');
+    const regNoG = /O\w+/; // 最初がOではじまる半角で2文字以上の文字列
+    console.log(regNoG.exec(str)); // ['OFF', ... 取得できるデータはmatchAll()と同じ配列風オブジェクト
+
+    // gフラグあり
+    console.log('gフラグあり');
+    const reg = /O\w+/g;
+    console.log(reg.exec(str)); // ['OFF']
+    console.log(reg.exec(str)); // ['ON']
+    console.log(reg.exec(str)); // null
+
+    // gフラグあり、whileを使う方法
+    console.log('whileを使う');
+    const reg2 = /O\w+/g; // 正規表現オブジェクトはwhile文を実行する前に定数に代入
+    let match = reg2.exec(str);
+    while (match !== null) {
+      console.log(match);
+      console.log(reg2.lastIndex);
+      match = reg2.exec(str);
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>exec() の使用例</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

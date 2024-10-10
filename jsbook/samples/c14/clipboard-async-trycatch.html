@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>writeText()メソッドの使用例 〜async/await版にtry〜catch文を追加</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    .copycontent {
+      display: inline flex;
+      gap: 1rem;
+      margin: 1em 0;
+      border-radius: 6px;
+      padding: 0.5em 1rem;
+
+      background: #eee;
+    }
+    .copycontent .copybtn {
+      width: 1rem;
+    }
+  </style>
+  <script type="module">
+    document.querySelectorAll('.copycontent .copybtn').forEach((v, i) => {
+      v.addEventListener('click', async (e) => {
+        const content = e.currentTarget.previousElementSibling.textContent;
+        try {
+          await navigator.clipboard.writeText(content);
+          alert('コピーしました。');
+        } catch (err) {
+          alert(`コピーに失敗しました。Error: ${err}`);
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>writeText()メソッドの使用例 〜async/await版にtry〜catch文を追加</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="copycontent">
+        <div class="content">https://studio947.net</div>
+        <div class="copybtn"><img src="../res/copy.svg" alt="copy"></div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+

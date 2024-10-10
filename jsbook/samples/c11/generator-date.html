@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日時を出力するジェネレーター</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function* dateGenerator(startDate = new Date(), step = 1) {
+      const start = startDate.getTime();
+      const ms = 1000 * 60 * 60 * 24 * step;
+      for (let i = start; ; i += ms) {
+        yield new Date(i);
+      }
+    }
+
+    const it = dateGenerator(new Date(), 7);
+    console.log(it.next().value);
+    console.log(it.next().value);
+    console.log(it.next().value);
+    console.log(it.next().value);
+    console.log(it.next().value);
+    console.log(it.next().value);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>日時を出力するジェネレーター</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

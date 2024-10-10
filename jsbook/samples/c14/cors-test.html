@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORS</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    // CORSエラーを出す場合は次の行のコメントアウトを外す。(URL)はPHPをアップロードしたURLに書き換える
+    // const fetched = await fetch('(URL)/cors-error.php');
+    // 正しく通信したい場合は次の行のコメントアウトを外す。(URL)はPHPをアップロードしたURLに書き換える
+    const fetched = await fetch('https://studio947.net/cors-allow.php');
+    const data = await fetched.json();
+    console.log(data);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>template</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

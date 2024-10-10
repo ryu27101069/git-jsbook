@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クラスを追加・削除して表示を切り替える</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    .hamburger {
+      display: grid;
+      align-items: center;
+      padding: 8px;
+      border-radius: 8px;
+      width: 48px;
+      height: 48px;
+      background: black;
+      cursor: pointer;
+    }
+    .hamburger > span {
+      display: block;
+      border-radius: 4px;
+      width: 100%;
+      height: 4px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+    .hamburger.open > span:nth-of-type(1) {
+      transform: translate(0px, 11px) rotate(45deg);
+    }
+    .hamburger.open > span:nth-of-type(2) {
+      opacity: 0;
+    }
+    .hamburger.open > span:nth-of-type(3) {
+      transform: translate(0px, -11px) rotate(-45deg);
+    }
+  </style>
+  <script type="module">
+    document.querySelector('.hamburger').addEventListener('click', (e) => {
+      e.currentTarget.classList.toggle('open');
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>クラスを追加・削除して表示を切り替える</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </main>
+</body>
+</html>
+
+

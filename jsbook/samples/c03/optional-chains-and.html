@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tabletプロパティがあるかどうか確認する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const screenSize = {
+      desktop: {
+        width: 1920,
+        height: 1080,
+      },
+      mobile: {
+        width: 360,
+        height: 800,
+      },
+    };
+
+    const w = screenSize.tablet && screenSize.tablet.width;
+    const h = screenSize.tablet && screenSize.tablet.height;
+    
+    console.log(w, h); // undefined undefined エラーは起きない
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>tabletプロパティがあるかどうか確認する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

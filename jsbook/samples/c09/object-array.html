@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>値に配列、オブジェクトが含まれる</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const weather = {
+      place: {
+        city: 'Tokyo',
+        lat: 35.7,
+        lng: 139.7,
+      },
+      date: '2023-05-08',
+      temp: [16, 14, 14, 22, 25, 26, 21, 20],
+    };
+    console.log(weather.temp); // [16, 14, 14, 22, 25, 26, 21, 20]
+    console.log(weather['temp']);
+    console.log(weather.temp[2]); // 14
+    console.log(weather['temp'][3]); // 22
+    console.log(weather.place.city); // Tokyo
+    console.log(weather['place']['city']); // Tokyo
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>値に配列、オブジェクトが含まれる</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

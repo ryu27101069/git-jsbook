@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>取得できる値の範囲を決めるイテレーター</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function rangeIterator(start, end, step) {
+      let nextValue = start;
+
+      const iterator = {
+        next() {
+          let result;
+          if ((step > 0 && nextValue < end)||(step < 0 && end < nextValue)) {
+            result = {value: nextValue, done: false};
+            nextValue += step;
+            return result;
+          }
+          return {value: nextValue, done: true};
+        },
+      };
+      return iterator;
+    }
+
+    const it = rangeIterator(0, 10, 2);
+    let result = it.next();
+    console.log(result); // {value: 0, done: false}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>取得できる値の範囲を決めるイテレーター</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

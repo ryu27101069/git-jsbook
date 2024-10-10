@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter()メソッド、オブジェクトのプロパティの値でフィルターする</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const stock = [
+      {name: 'A自動車', price: 1462, yield: 3.42, per: 11.75},
+      {name: 'B商事', price: 1473, yield: 4.34, per: 7.12},
+      {name: 'Cファッション', price: 32010, yield: 0.78, per: 40.89},
+      {name: 'Dシステムズ', price: 4135, yield: 1.69, per: 20.02},
+    ];
+    const filtered = stock.filter((v) => v.yield > 2 && v.per < 15);
+    console.log(filtered);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>filter()メソッド、オブジェクトのプロパティの値でフィルターする</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

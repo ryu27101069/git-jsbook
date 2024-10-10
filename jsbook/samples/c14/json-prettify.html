@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSONデータを見やすく整形する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    #placeholder {
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      max-width: 1000px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+  <script type="module">
+    const object = {
+      id: 106,
+      title: 'JSONデータを使いこなす方法',
+      published: true,
+      excerpt: '各種プログラミング言語でJSONデータを扱う方法',
+    };
+    const json = JSON.stringify(object, null, 2);
+    document.querySelector('#placeholder').textContent = json;
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>JSONデータを見やすく整形する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <pre id="placeholder"></pre>
+    </div>
+  </main>
+</body>
+</html>
+
+

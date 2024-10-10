@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>setter（セッター）でbaseプロパティの値を書き換える</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    class RamenOrder {
+      // fields
+      #base;
+      mori;
+      toppings = [];
+      // constructor
+      constructor(base, mori) {
+        this.#base = base;
+        this.mori = this.setMori(mori);
+      }
+      // methods
+      setMori(mori) {
+        if (mori === 'ふつう' || mori === undefined) return 1;
+        if (mori === '大盛り') return 1.5;
+      }
+      addToppings(...args) {
+        this.toppings = [...this.toppings, ...args];
+      }
+      checkOrder() {
+        const orderStr = `味: ${this.#base}
+トッピング: ${this.toppings}
+盛り: ${this.mori}`;
+        console.log(orderStr);
+      }
+      // getter / setter
+      get base() {
+        return this.#base;
+      }
+      set base(taste) {
+        this.#base = taste;
+      }
+    }
+
+    const order1 = new RamenOrder('こってり', '大盛り');
+    // 書き換える前のorder1を表示
+    order1.checkOrder();
+    // setter経由で書き換える
+    order1.base = 'さっぱり';
+    order1.checkOrder();
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>setter（セッター）でbaseプロパティの値を書き換える</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

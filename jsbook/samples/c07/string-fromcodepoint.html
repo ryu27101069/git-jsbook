@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コード値を使って4文字表示する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const htd = (num) => { // hex to decimal の略
+      return Number.parseInt(num, 16);
+    };
+
+    const elm = document.querySelector('#icons');
+    elm.textContent = String.fromCodePoint(
+        htd(2660),
+        htd(2661),
+        htd(2662),
+        htd(2663),
+    );
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>コード値を使って4文字表示する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p id="icons"></p>
+    </div>
+  </main>
+</body>
+</html>
+
+

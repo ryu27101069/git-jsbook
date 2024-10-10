@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fetch()メソッドでテキストデータを受信</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    #placeholder {
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      max-width: 1000px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+  <script type="module">
+    const response = await fetch('../res/text.txt');
+    const data = await response.text();
+    document.querySelector('#placeholder').textContent = data;
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>fetch()メソッドでテキストデータを受信</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <pre id="placeholder"></pre>
+    </div>
+  </main>
+</body>
+</html>
+
+

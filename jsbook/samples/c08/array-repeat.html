@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>配列を繰り返し処理する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const todos = ['キャンセルの電話する', '企画を考える', '修理に出す'];
+
+    // for文
+    for (let i = 0; i < todos.length; i++) {
+      console.log(`${i + 1}. ${todos[i]}`);
+    }
+
+    // for〜of文
+    for (const item of todos) {
+      console.log(item);
+    }
+
+    // forEach()
+    todos.forEach((v, i) => console.log(`${(i + 1)}. ${v}`));
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>配列の繰り返し</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

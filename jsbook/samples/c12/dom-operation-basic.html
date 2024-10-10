@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM操作の基本例</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const btn = document.querySelector('#btn');
+    btn.addEventListener('click', () => {
+      const date = new Date();
+      const hour = String(date.getHours()).padStart(2, '0');
+      const min = String(date.getMinutes()).padStart(2, '0');
+      const sec = String(date.getSeconds()).padStart(2, '0');
+      const newLine = `<li>${hour}:${min}:${sec} クリック</li>`;
+      const container = document.querySelector('#log');
+      container.insertAdjacentHTML('afterbegin', newLine);
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>DOM操作の基本例</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p><button id="btn">ログを記録</button></p>
+      <ul id="log">
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
+
+

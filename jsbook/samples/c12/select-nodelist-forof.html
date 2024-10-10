@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for〜of文を使ってNodeListのデータを繰り返し操作する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const todos = document.querySelectorAll('.todo');
+    for (const todo of todos) {
+      const str = todo.textContent;
+      console.log(str);
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>for〜of文を使ってNodeListのデータを繰り返し操作する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <ul id="list">
+        <li class="todo">Webサイトのデザイン案を確認</li>
+        <li class="todo">メンバーのプルリクエストを確認</li>
+        <li class="todo">使用していない機材を整理</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
+
+

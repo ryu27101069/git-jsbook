@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タイマープロミス 〜Promise版</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    function timerPromise(ms, message) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(message);
+        }, ms);
+      });
+    }
+
+    timerPromise(1000, 'タイマー終了1')
+        .then((message) => {
+          console.log(message);
+          return timerPromise(1000, 'タイマー終了2');
+        })
+        .then((message) => {
+          console.log(message);
+        });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>タイマープロミス 〜Promise版</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

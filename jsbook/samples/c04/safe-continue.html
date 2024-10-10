@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>continue（while文で使用）</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+  const arr = ['ソースコード', 'は', 'GitHub', 'に', 'あります'];
+  let i = 0;
+  while (i < arr.length) {
+    const word = arr[i];
+    i++;
+    if (word === 'は' || word === 'に') {
+      continue;
+    }
+    console.log(word);
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>continue（while文で使用）</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

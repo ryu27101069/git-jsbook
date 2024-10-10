@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map()メソッドを使って画像のパスを配列にする</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    .photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+  </style>
+  <script type="module">
+    const images = [...document.querySelectorAll('.photo')];
+    const files = images.map((value) => {
+      const url = new URL(value.firstElementChild.src);
+      return url.pathname;
+    });
+    console.log(files);
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>map()メソッドを使って画像のパスを配列にする</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="photos">
+        <div class="photo">
+          <img src="images/austria.jpg" alt="風景1">
+        </div>
+        <div class="photo">
+          <img src="images/switzerland.jpg" alt="風景2">
+        </div>
+        <div class="photo">
+          <img src="images/poland.jpg" alt="風景3">
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+

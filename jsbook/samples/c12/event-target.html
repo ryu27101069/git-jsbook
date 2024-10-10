@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>イベントが発生した要素を取得する</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <style>
+    #clickable {
+      max-width: 100%;
+      vertical-align: bottom;
+      cursor: pointer;
+    }
+    .imgbox {
+      width: 300px;
+      height: 200px;
+    }
+  </style>
+  <script type="module">
+    document.querySelector('#clickable').addEventListener('click', (e) => {
+      const me = e.currentTarget;
+      me.src = '../res/dom-target-arrow.png';
+      setTimeout(() => {
+        me.src = '../res/dom-target-default.png';
+      }, 1000);
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>イベントが発生した要素を取得する</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="imgbox">
+        <img src="../res/dom-target-default.png" alt="" id="clickable">
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+

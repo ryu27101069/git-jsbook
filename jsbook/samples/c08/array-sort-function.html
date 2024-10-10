@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ルールを作って並べ替える</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    // 通常のソート
+    const nums = [1, 7, 3, 6, 5, 8, 4, 10, 2, 9];
+    nums.sort();
+    console.log(nums);
+
+    // ソート関数を使用
+    nums.sort((a, b) => a - b);
+    console.log(nums); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>ルールを作って並べ替える</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

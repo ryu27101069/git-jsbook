@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>インクリメント、前置と後置の動作の違い</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    // 変数aに前置でインクリメント
+    let a = 10;
+    let b = ++a;
+    console.log('a = ' + a); // 11
+    console.log('b = ' + b); // 11
+
+    // 変数cに後置でインクリメント
+    let c = 10;
+    let d = c++;
+    console.log('c = ' + c); // 11
+    console.log('d = ' + d); // 10
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>インクリメント、前置と後置の動作の違い</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

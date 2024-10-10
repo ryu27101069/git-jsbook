@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>イベントプロパゲーション</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const eventHandler = (e) => {
+      console.log(e.currentTarget);
+    };
+    document.documentElement.addEventListener('click', eventHandler); // <html>にclickイベント設定
+    document.body.addEventListener('click', eventHandler); // <body>
+    document.querySelector('main').addEventListener('click', eventHandler); // <main>
+    document.querySelector('.container').addEventListener('click', eventHandler); // <div class="container">
+    document.querySelector('#btn').addEventListener('click', eventHandler); // <button id="btn">
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>イベントプロパゲーション</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <button id="btn">クリックしてみて</button>
+    </div>
+  </main>
+</body>
+</html>
+
+

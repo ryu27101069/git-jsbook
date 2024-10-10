@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>every() - some()</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const stock = [3937, 3890, 3853, 3890, 3910];
+    const low = stock.every((item) => item >= 3890);
+    const high = stock.some((item) => item >= 3920);
+
+    console.log(`株価の下限3890以上 ${low}`); // everyの結果：false
+    console.log(`株価の目標3920達成 ${high}`); // someの結果：true
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>every() - some()</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+

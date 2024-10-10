@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch文の基本形</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const networkStatus = ['offline', 'online-wifi', 'online-ethernet'];
+    let current = networkStatus[0];
+
+    switch (current) {
+      case networkStatus[0]:
+        alert('ネットワーク状況：オフライン');
+        break;
+      case networkStatus[1]:
+        alert('ネットワーク状況: wifiに接続中');
+        break;
+      case networkStatus[2]:
+        alert('ネットワーク状況: Ethernetに接続中');
+        break;
+      default:
+        alert('ネットワーク状況: 不明');
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>switch文の基本形</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      
+    </div>
+  </main>
+</body>
+</html>
+
+

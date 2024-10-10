@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デフォルト動作をキャンセルする</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    document.querySelector('#show-alert').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('デフォルト動作をキャンセルしてダイアログを表示');
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>デフォルト動作をキャンセルする</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>
+        <a href="#" id="show-alert">クリックするとアラートダイアログを表示します。</a>
+      </p>
+    </div>
+  </main>
+</body>
+</html>
+
+

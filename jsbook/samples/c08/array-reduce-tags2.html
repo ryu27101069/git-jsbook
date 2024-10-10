@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タグの出現回数をカウントする</title>
+  <link rel="stylesheet" href="../res/style.css">
+  <script type="module">
+    const articles = [
+      {
+        title: 'いまから始めるプログラミングガイド決定版',
+        published: '2023/11/01',
+        tags: ['プログラミング', '入門'],
+      },
+      {
+        title: 'リモートワークのリフレッシュ方法',
+        published: '2023/10/20',
+        tags: ['働き方', '健康'],
+      },
+      {
+        title: 'reduce()で始める関数型プログラミングの心得',
+        published: '2023/10/11',
+        tags: ['プログラミング', 'JavaScript'],
+      },
+    ];
+
+    // 出現回数をカウントする
+    const countTags = articles.reduce((previous, current) => {
+      const cur = current.tags ?? [];
+      for (const tag of cur) {
+        if (Object.hasOwn(previous, tag)) {
+          previous[tag] += 1;
+        } else {
+          previous[tag] = 1;
+        }
+      }
+      return previous;
+    }, {});
+    console.log(countTags); // {プログラミング: 2, 入門: 1, 働き方: 1, 健康: 1, JavaScript: 1}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="flcon">
+        <div class="logo"><a href="../index.html"><img src="../res/logo.svg" alt="JavaScript" width="60"></a></div>
+        <div class="title">
+          <h1>タグの出現回数をカウントする</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p>コンソールを開いて確認します。</p>
+    </div>
+  </main>
+</body>
+</html>
+
+
